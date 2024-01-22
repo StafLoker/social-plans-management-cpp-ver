@@ -14,7 +14,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23 -Wall")
 project(social_plans_management VERSION 0.0.1)
 
 # Variables
-set(SOURCES src/main.cpp)
+set(SOURCES src/main.cpp
+        src/data/models/User.cpp
+        src/data/models/User.h
+        src/data/models/exceptions/InvalidAttributeException.h)
 
 # Add main executable
 add_executable(social_plans_management ${SOURCES})
