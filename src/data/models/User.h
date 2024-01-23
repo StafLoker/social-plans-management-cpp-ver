@@ -16,6 +16,8 @@ class User {
     int age;
 
 public:
+    User() = default;
+
     User(string name, string mobile, const string &password, int age) : name(std::move(name)), mobile(std::move(mobile)){
         this->setPassword(password);
         this->setAge(age);
@@ -24,6 +26,8 @@ public:
     void setPassword(string password);
 
     void setAge(int age);
+
+    void setId(int id);
 
     int getId() const;
 
@@ -34,8 +38,6 @@ public:
     const string &getPassword() const;
 
     int getAge() const;
-
-    void setId(int id);
 };
 
 
