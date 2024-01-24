@@ -17,7 +17,11 @@ project(social_plans_management VERSION 0.0.1)
 set(SOURCES src/main.cpp
         src/data/models/User.cpp
         src/data/models/User.h
-        src/data/models/exceptions/InvalidAttributeException.h)
+        src/data/models/exceptions/InvalidAttributeException.h
+        src/data/models/spm/Activity.cpp
+        src/data/models/spm/Activity.h
+        src/data/models/spm/activityTypes/Theater.cpp
+        src/data/models/spm/activityTypes/Theater.h)
 
 # Add main executable
 add_executable(social_plans_management ${SOURCES})
