@@ -1,6 +1,11 @@
 #include "User.h"
 #include "exceptions/InvalidAttributeException.h"
 
+User::User(string name, string mobile, const string &password, int age) : name(std::move(name)), mobile(std::move(mobile)){
+    this->setPassword(password);
+    this->setAge(age);
+}
+
 void User::setPassword(string password) {
     if (password.length() < MIN_LONG_PASSWORD) {
         throw InvalidAttributeException("The password must be at least 3 characters long");
