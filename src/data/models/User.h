@@ -12,7 +12,7 @@ private:
     static const int MAX_AGE = 100;
     static const int MIN_LONG_PASSWORD = 3;
 
-    int id{};
+    long id{};
     string name, mobile, password;
     int age;
 
@@ -25,9 +25,9 @@ public:
 
     void setAge(int age);
 
-    void setId(int id);
+    void setId(long id);
 
-    int getId() const;
+    long getId() const;
 
     const string &getName() const;
 

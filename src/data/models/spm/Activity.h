@@ -10,7 +10,7 @@ class Activity {
 private:
     static const int MIN_CAPACITY = 1;
 
-    int id{};
+    long id{};
     string name, description;
     int duration;
     float price;
@@ -27,11 +27,11 @@ public:
 
     // getters & setters
 
-    void setId(int id);
+    void setId(long id);
 
     void setCapacity(int capacity);
 
-    int getId() const;
+    long getId() const;
 
     const string &getName() const;
 
