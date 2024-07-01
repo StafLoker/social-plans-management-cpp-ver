@@ -11,7 +11,7 @@ using namespace std;
 template<typename T>
 class GenericRepositoryMap : public GenericRepository<T> {
 private:
-    map<long, T> repository;
+    map<long, T*> repository;
 public:
     const T* create(T *entity) override;
 
@@ -22,6 +22,10 @@ public:
     void deleteById(long id) override;
 
     list<T*> findAll() override;
+
+    virtual long getIdEntity(T *entity);
+
+    virtual void setIdEntity(T *entity, long id);
 };
 
 #endif //SOCIAL_PLANS_MANAGEMENT_GENERICREPOSITORYMAP_H

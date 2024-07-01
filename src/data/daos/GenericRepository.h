@@ -11,9 +11,9 @@ class GenericRepository {
 public:
     virtual const T* create(T *entity);
 
-    virtual const T* update(T *entity);
-
     virtual optional<T*> readById(long id);
+
+    virtual const T* update(T *entity);
 
     virtual void deleteById(long id);
 
