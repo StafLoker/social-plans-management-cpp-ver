@@ -3,11 +3,16 @@
 
 
 #include "../UserRepository.h"
+#include "GenericRepositoryMap.h"
 
-class UserRepositoryMap : public UserRepository {
-    optional<User> findByName(const string &name) override;
+class UserRepositoryMap : public UserRepository, GenericRepositoryMap<User> {
+    optional<User*> findByName(const string &name) override;
 
-    optional<User> findByMobile(const string &mobile) override;
+    optional<User*> findByMobile(const string &mobile) override;
+
+    long getIdEntity(User *entity) override;
+
+    void setIdEntity(User *entity, long id) override;
 };
 
 

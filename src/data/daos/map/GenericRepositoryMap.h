@@ -10,7 +10,7 @@ using namespace std;
 
 template<typename T>
 class GenericRepositoryMap : public GenericRepository<T> {
-private:
+protected:
     map<long, T*> repository;
 public:
     const T* create(T *entity) override;
