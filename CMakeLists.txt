@@ -28,7 +28,17 @@ set(SOURCES src/main.cpp
         src/data/models/spm/Plan.cpp
         src/data/models/spm/Plan.h
         src/data/models/spm/activityTypes/Cinema.cpp
-        src/data/models/spm/activityTypes/Cinema.h)
+        src/data/models/spm/activityTypes/Cinema.h
+        src/data/daos/PlanRepository.h
+        src/data/daos/map/ActivityRepositoryMap.cpp
+        src/data/daos/map/ActivityRepositoryMap.h
+        src/data/daos/map/PlanRepositoryMap.cpp
+        src/data/daos/map/PlanRepositoryMap.h
+        src/data/daos/map/UserRepositoryMap.cpp
+        src/data/daos/map/UserRepositoryMap.h
+        src/data/daos/map/GenericRepositoryMap.cpp
+        src/data/daos/map/GenericRepositoryMap.h
+)
 
 # Add main executable
 add_executable(social_plans_management ${SOURCES})

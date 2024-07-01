@@ -22,7 +22,7 @@ float Activity::getPrice(int age) const {
 
 // getters & setters
 
-void Activity::setId(int id) {
+void Activity::setId(long id) {
     Activity::id = id;
 }
 
@@ -34,7 +34,7 @@ void Activity::setCapacity(int capacity) {
     Activity::capacity = capacity;
 }
 
-int Activity::getId() const {
+long Activity::getId() const {
     return this->id;
 }
 

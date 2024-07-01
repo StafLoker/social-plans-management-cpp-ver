@@ -11,9 +11,9 @@ using namespace std;
 
 class UserRepository : public GenericRepository<User> {
 public:
-    virtual optional<User> findByName(const string &name);
+    virtual optional<User*> findByName(const string &name);
 
-    virtual optional<User> findByMobile(const string &mobile);
+    virtual optional<User*> findByMobile(const string &mobile);
 };
 
 #endif //SOCIAL_PLANS_MANAGEMENT_USERREPOSITORY_H

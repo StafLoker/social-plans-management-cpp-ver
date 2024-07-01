@@ -22,11 +22,11 @@ void User::setAge(int age) {
     this->age = age;
 }
 
-void User::setId(int id) {
+void User::setId(long id) {
     this->id = id;
 }
 
-int User::getId() const {
+long User::getId() const {
     return this->id;
 }
 
