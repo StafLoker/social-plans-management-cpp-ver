@@ -2,8 +2,20 @@
 #define SOCIAL_PLANS_MANAGEMENT_ACTIVITYSERVICE_H
 
 
-class ActivityService {
+#include "../data/daos/ActivityRepository.h"
 
+class ActivityService {
+private:
+    ActivityRepository *activityRepository;
+public:
+    ActivityService(ActivityRepository *activityRepository) : activityRepository(activityRepository) {}
+
+    const Activity *
+    create(const string &type, const string &name, const string &description, int duration, float price, optional<int> capacity);
+
+private:
+    Activity *createActivityBasedOnType(const string &type, const string &name, const string &description, int duration, float price,
+                                        optional<int> capacity);
 };
 
 
