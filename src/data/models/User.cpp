@@ -45,3 +45,13 @@ const string &User::getPassword() const {
 int User::getAge() const {
     return this->age;
 }
+
+// operators
+
+bool User::operator==(const User &rhs) const {
+    return id == rhs.id;
+}
+
+bool User::operator!=(const User &rhs) const {
+    return !(rhs == *this);
+}

@@ -36,12 +36,6 @@ int Plan::availableSpots() const {
 }
 
 void Plan::addActivity(Activity *activity) {
-    if (std::find(this->activities.begin(), this->activities.end(), activity) !=
-        this->activities.end()) {
-        throw InvalidAttributeException(
-                string("Activity with ID: ") + to_string(activity->getId()) +
-                string("already exists in the activities list."));
-    }
     if (activity->getCapacity().has_value() && this->capacity.has_value()) {
         if (activity->getCapacity().value() < this->capacity.value()) {
             this->capacity = activity->getCapacity();
@@ -115,3 +109,22 @@ const optional<int> &Plan::getCapacity() const {
 void Plan::setCapacity(int capacity) {
     this->capacity = capacity;
 }
+
+const list<User *> Plan::getSubscribers() {
+    return this->subscribers;
+}
+
+const list<Activity *> Plan::getActivities() {
+    return this->activities;
+}
+
+// operators
+
+bool Plan::operator==(const Plan &rhs) const {
+    return id == rhs.id;
+}
+
+bool Plan::operator!=(const Plan &rhs) const {
+    return !(rhs == *this);
+}
+

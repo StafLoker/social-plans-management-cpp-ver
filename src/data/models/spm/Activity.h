@@ -42,6 +42,12 @@ public:
     float getPrice() const;
 
     const optional<int> &getCapacity() const;
+
+    // operators
+
+    bool operator==(const Activity &rhs) const;
+
+    bool operator!=(const Activity &rhs) const;
 };
 
 

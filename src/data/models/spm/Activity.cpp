@@ -57,3 +57,13 @@ float Activity::getPrice() const {
 const optional<int> &Activity::getCapacity() const {
     return this->capacity;
 }
+
+// operators
+
+bool Activity::operator==(const Activity &rhs) const {
+    return id == rhs.id;
+}
+
+bool Activity::operator!=(const Activity &rhs) const {
+    return !(rhs == *this);
+}

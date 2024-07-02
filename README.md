@@ -9,6 +9,10 @@ activities, via console.
 
 `Three Tier`
 
-### Technologies used
+### Dependencies
 
 `CMake`
+
+### Design Patterns
+
+`Dependency injection` `Command`
