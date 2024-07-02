@@ -11,35 +11,38 @@ private:
     PlanRepository *planRepository;
     ActivityRepository *activityRepository;
     Session *session;
+
 public:
     PlanService(PlanRepository *planRepository,
                 ActivityRepository *activityRepository,
                 Session *session) : planRepository(planRepository), activityRepository(activityRepository), session(session) {}
 
-    Plan *create(const string &name, chrono::system_clock::time_point date, const string &meetingPlace, optional<int> capacity);
+    const Plan *create(const string &name, chrono::system_clock::time_point date, const string &meetingPlace, optional<int> capacity);
 
     void deletePlan(long planId);
 
-    Plan *addActivity(long planId, long activityId);
+    const Plan *addActivity(long planId, long activityId);
 
-    Plan *enrollSubscriber(long planId);
+    const Plan *enrollSubscriber(long planId);
 
-    float price(long planId);
+    float price(long planId) const;
 
-    int duration(long planId);
+    int duration(long planId) const;
 
-    list<Plan *> availablePlans();
+    const list<Plan *> availablePlans() const;
 
-    list<Plan *> subscribedPlans();
+    const list<Plan *> subscribedPlans() const;
 
-    list<Plan *> priceRangePlans(float price, float range);
+    const list<Plan *> priceRangePlans(float price, float range) const;
 
-    list<Plan*> weekendPlans();
+    const list<Plan *> weekendPlans() const;
 
-    list<Plan*> plansContainingKeyword(const string &keyword);
+    const list<Plan *> plansContainingKeyword(const string &keyword) const;
 
 private:
-    void checkNoTimeCollisionBetweenSubscribedPlans(Plan *plan, User *user);
+    void checkNoTimeCollisionBetweenSubscribedPlans(Plan *plan, User *user) const;
+
+    chrono::system_clock::time_point getNextFriday() const;
 };
 
 
