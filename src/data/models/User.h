@@ -36,6 +36,12 @@ public:
     const string &getPassword() const;
 
     int getAge() const;
+
+    // operators
+
+    bool operator==(const User &rhs) const;
+
+    bool operator!=(const User &rhs) const;
 };
 
 

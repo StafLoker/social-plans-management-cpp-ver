@@ -115,3 +115,13 @@ const optional<int> &Plan::getCapacity() const {
 void Plan::setCapacity(int capacity) {
     this->capacity = capacity;
 }
+
+// operators
+
+bool Plan::operator==(const Plan &rhs) const {
+    return id == rhs.id;
+}
+
+bool Plan::operator!=(const Plan &rhs) const {
+    return !(rhs == *this);
+}

@@ -66,6 +66,16 @@ public:
     const optional<int> &getCapacity() const;
 
     void setCapacity(int capacity);
+
+    const list<User*> getSubscribers();
+
+    const list<Activity*> getActivities();
+
+    // operators
+
+    bool operator==(const Plan &rhs) const;
+
+    bool operator!=(const Plan &rhs) const;
 };
 
 
