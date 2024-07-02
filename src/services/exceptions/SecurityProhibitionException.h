@@ -10,7 +10,7 @@ using namespace std;
 class SecurityProhibitionException : public logic_error {
 public:
     explicit SecurityProhibitionException(const string &detail) : logic_error(
-            string("Security Authorization Exception. You are not registered") + " >>> " + detail) {}
+            string("Security Prohibition Exception. You are not authorized") + " >>> " + detail) {}
 };
 
 #endif //SOCIAL_PLANS_MANAGEMENT_SECURITYPROHIBITIONEXCEPTION_H
