@@ -50,6 +50,24 @@ set(SOURCES src/main.cpp
         src/services/exceptions/NotFoundException.h
         src/services/exceptions/SecurityAuthorizationException.h
         src/services/exceptions/SecurityProhibitionException.h
+        src/console/CommandLineInterface.cpp
+        src/console/CommandLineInterface.h
+        src/console/commands/Command.h
+        src/console/ErrorHandler.cpp
+        src/console/ErrorHandler.h
+        src/console/ViewConsole.cpp
+        src/console/ViewConsole.h
+        src/console/View.h
+        src/console/exceptions/UnsupportedAttributesException.h
+        src/console/exceptions/UnsupportedCommandException.h
+        src/console/commands/user/CreateUser.cpp
+        src/console/commands/user/CreateUser.h
+        src/console/commands/user/Login.cpp
+        src/console/commands/user/Login.h
+        src/console/commands/user/Logout.cpp
+        src/console/commands/user/Logout.h
+        src/console/commands/activity/CreateActivity.cpp
+        src/console/commands/activity/CreateActivity.h
 )
 
 # Add main executable
