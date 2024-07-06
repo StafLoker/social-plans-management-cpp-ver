@@ -21,7 +21,18 @@
 #include "console/commands/user/Login.h"
 #include "console/commands/user/Logout.h"
 #include "console/commands/activity/CreateActivity.h"
-// #include "console/commands/plan/"
+#include "console/commands/plan/crud/CreatePlan.h"
+#include "console/commands/plan/crud/DeletePlan.h"
+#include "console/commands/plan/list/AvailablePlans.h"
+#include "console/commands/plan/list/CostRangePlans.h"
+#include "console/commands/plan/list/PlansContainingKeyword.h"
+#include "console/commands/plan/list/SubscribedPlans.h"
+#include "console/commands/plan/list/WeekendPlans.h"
+#include "console/commands/plan/AddActivityToPlan.h"
+#include "console/commands/plan/EnrollSubscriber.h"
+#include "console/commands/plan/GetPlanDuration.h"
+#include "console/commands/plan/GetPlanPrice.h"
+
 
 class DependencyInjection {
 private:
@@ -45,7 +56,17 @@ private:
         this->commandLineInterface.add(new Login(&view, &userService, &session));
         this->commandLineInterface.add(new Logout(&userService));
         this->commandLineInterface.add(new CreateActivity(&view, &activityService, &session));
-        // add plan commands
+        this->commandLineInterface.add(new CreatePlan(&session, &planService, &view));
+        this->commandLineInterface.add(new DeletePlan(&session, &planService, &view));
+        this->commandLineInterface.add(new AvailablePlans(&session, &planService, &view));
+        this->commandLineInterface.add(new CostRangePlans(&session, &planService, &view));
+        this->commandLineInterface.add(new PlansContainingKeyword(&session, &planService, &view));
+        this->commandLineInterface.add(new SubscribedPlans(&session, &planService, &view));
+        this->commandLineInterface.add(new WeekendPlans(&session, &planService, &view));
+        this->commandLineInterface.add(new AddActivityToPlan(&session, &planService, &view));
+        this->commandLineInterface.add(new EnrollSubscriber(&session, &planService, &view));
+        this->commandLineInterface.add(new GetPlanDuration(&session, &planService, &view));
+        this->commandLineInterface.add(new GetPlanPrice(&session, &planService, &view));
     }
 
 public:
