@@ -68,6 +68,7 @@ set(SOURCES src/main.cpp
         src/console/commands/user/Logout.h
         src/console/commands/activity/CreateActivity.cpp
         src/console/commands/activity/CreateActivity.h
+        src/DependencyInjection.h
 )
 
 # Add main executable
