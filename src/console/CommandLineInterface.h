@@ -2,7 +2,7 @@
 #define SOCIAL_PLANS_MANAGEMENT_COMMANDLINEINTERFACE_H
 
 #include "map"
-#include "list"
+#include "vector"
 
 #include "commands/Command.h"
 #include "../services/Session.h"
@@ -34,7 +34,7 @@ private:
 
     void showHelp();
 
-    map<string, list<string>> classifyByType();
+    map<string, vector<vector<string>>>* classifyByType();
 };
 
 

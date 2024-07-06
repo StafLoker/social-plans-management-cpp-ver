@@ -7,7 +7,7 @@ using namespace std;
 
 class Command {
 public:
-    virtual void execute(const string *values);
+    virtual void execute(const vector<string> *values);
 
     virtual string& value();
 

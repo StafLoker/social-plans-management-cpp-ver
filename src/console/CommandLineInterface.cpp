@@ -16,18 +16,18 @@ bool CommandLineInterface::runCommands() {
 
 bool CommandLineInterface::runCommand() {
     this->view->showCommand(this->session->getLoggedUser().has_value() ? "-" + this->session->getLoggedUser().value()->getName() : "");
-    string input[] = this->view->enterCommand();
+    auto input = this->view->enterCommand();
     bool exit = false;
 
-    if (VALUE_HELP == (input[0])) {
+    if (VALUE_HELP == input->at(0)) {
         this->showHelp();
-    } else if (VALUE_EXIT == (input[0])) {
+    } else if (VALUE_EXIT == input->at(0)) {
         exit = true;
     } else {
-        if (this->commands.contains(input[0])) {
-            this->commands[input[0]]->execute(&input[1]);
+        if (this->commands.contains(input->at(0))) {
+            this->commands[input->at(0)]->execute(new vector<string>(input->begin() + 1, input->end()));
         } else {
-            throw UnsupportedCommandException("Command '" + input[0] + "' does not exist.");
+            throw UnsupportedCommandException("Command '" + input->at(0) + "' does not exist.");
         }
     }
 
@@ -38,8 +38,8 @@ void CommandLineInterface::showHelp() {
     this->view->showHelp(this->classifyByType());
 }
 
-map<string, list<string>> CommandLineInterface::classifyByType() {
-    map<string, list<string>> categorizedCommands;
+map<string, vector<vector<string>>> *CommandLineInterface::classifyByType() {
+    map<string, vector<vector<string>>> categorizedCommands;
     categorizedCommands["user"] = {};
     categorizedCommands["plan"] = {};
     categorizedCommands["activity"] = {};
@@ -61,5 +61,5 @@ map<string, list<string>> CommandLineInterface::classifyByType() {
             {VALUE_EXIT, HELP_PARAMETERS_EXIT, HELP_COMMENT_EXIT}
     };
 
-    return categorizedCommands;
+    return &categorizedCommands;
 }
