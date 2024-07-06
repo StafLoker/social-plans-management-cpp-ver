@@ -3,20 +3,22 @@
 
 using namespace std;
 
-#include <list>
 #include "chrono"
+#include <map>
+#include <list>
 
 class View {
+public:
     /**
     * @return [0] ~ command , [i>=1] - parameters
     */
-    virtual string *enterCommand();
+    virtual vector<string> *enterCommand();
 
     virtual void showWelcome();
 
     virtual void showCommand(const string &message);
 
-    virtual void showHelp(Map <String, List<String[]>> *commandCategories);
+    virtual void showHelp(map<string, vector<vector<string>>> *commandCategories);
 
     virtual void showErrorWithComment(const string &errorMessage, const string &comment);
 
@@ -36,7 +38,8 @@ class View {
                     int capacity,
                     int availableSpots, list<string &> activitiesNames, list<string &> subscribersNames);
 
-    virtual void showActivity(long id, const string & name, const string & description, const string & type, int duration, int capacity, float price);
+    virtual void
+    showActivity(long id, const string &name, const string &description, const string &type, int duration, int capacity, float price);
 };
 
 #endif //SOCIAL_PLANS_MANAGEMENT_VIEW_H
