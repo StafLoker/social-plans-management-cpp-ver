@@ -69,6 +69,28 @@ set(SOURCES src/main.cpp
         src/console/commands/activity/CreateActivity.cpp
         src/console/commands/activity/CreateActivity.h
         src/DependencyInjection.h
+        src/console/commands/plan/crud/CreatePlan.cpp
+        src/console/commands/plan/crud/CreatePlan.h
+        src/console/commands/plan/crud/DeletePlan.cpp
+        src/console/commands/plan/crud/DeletePlan.h
+        src/console/commands/plan/list/AvailablePlans.cpp
+        src/console/commands/plan/list/AvailablePlans.h
+        src/console/commands/plan/list/CostRangePlans.cpp
+        src/console/commands/plan/list/CostRangePlans.h
+        src/console/commands/plan/list/PlansContainingKeyword.cpp
+        src/console/commands/plan/list/PlansContainingKeyword.h
+        src/console/commands/plan/list/SubscribedPlans.cpp
+        src/console/commands/plan/list/SubscribedPlans.h
+        src/console/commands/plan/list/WeekendPlans.cpp
+        src/console/commands/plan/list/WeekendPlans.h
+        src/console/commands/plan/AddActivityToPlan.cpp
+        src/console/commands/plan/AddActivityToPlan.h
+        src/console/commands/plan/EnrollSubscriber.cpp
+        src/console/commands/plan/EnrollSubscriber.h
+        src/console/commands/plan/GetPlanDuration.cpp
+        src/console/commands/plan/GetPlanDuration.h
+        src/console/commands/plan/GetPlanPrice.cpp
+        src/console/commands/plan/GetPlanPrice.h
 )
 
 # Add main executable
