@@ -15,4 +15,4 @@ activities, via console.
 
 ### Design Patterns
 
-`Dependency injection` `Command`
+`Dependency injection` `Singleton` `Command` 

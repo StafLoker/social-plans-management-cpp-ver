@@ -50,6 +50,47 @@ set(SOURCES src/main.cpp
         src/services/exceptions/NotFoundException.h
         src/services/exceptions/SecurityAuthorizationException.h
         src/services/exceptions/SecurityProhibitionException.h
+        src/console/CommandLineInterface.cpp
+        src/console/CommandLineInterface.h
+        src/console/commands/Command.h
+        src/console/ErrorHandler.cpp
+        src/console/ErrorHandler.h
+        src/console/ViewConsole.cpp
+        src/console/ViewConsole.h
+        src/console/View.h
+        src/console/exceptions/UnsupportedAttributesException.h
+        src/console/exceptions/UnsupportedCommandException.h
+        src/console/commands/user/CreateUser.cpp
+        src/console/commands/user/CreateUser.h
+        src/console/commands/user/Login.cpp
+        src/console/commands/user/Login.h
+        src/console/commands/user/Logout.cpp
+        src/console/commands/user/Logout.h
+        src/console/commands/activity/CreateActivity.cpp
+        src/console/commands/activity/CreateActivity.h
+        src/DependencyInjection.h
+        src/console/commands/plan/crud/CreatePlan.cpp
+        src/console/commands/plan/crud/CreatePlan.h
+        src/console/commands/plan/crud/DeletePlan.cpp
+        src/console/commands/plan/crud/DeletePlan.h
+        src/console/commands/plan/list/AvailablePlans.cpp
+        src/console/commands/plan/list/AvailablePlans.h
+        src/console/commands/plan/list/CostRangePlans.cpp
+        src/console/commands/plan/list/CostRangePlans.h
+        src/console/commands/plan/list/PlansContainingKeyword.cpp
+        src/console/commands/plan/list/PlansContainingKeyword.h
+        src/console/commands/plan/list/SubscribedPlans.cpp
+        src/console/commands/plan/list/SubscribedPlans.h
+        src/console/commands/plan/list/WeekendPlans.cpp
+        src/console/commands/plan/list/WeekendPlans.h
+        src/console/commands/plan/AddActivityToPlan.cpp
+        src/console/commands/plan/AddActivityToPlan.h
+        src/console/commands/plan/EnrollSubscriber.cpp
+        src/console/commands/plan/EnrollSubscriber.h
+        src/console/commands/plan/GetPlanDuration.cpp
+        src/console/commands/plan/GetPlanDuration.h
+        src/console/commands/plan/GetPlanPrice.cpp
+        src/console/commands/plan/GetPlanPrice.h
 )
 
 # Add main executable
