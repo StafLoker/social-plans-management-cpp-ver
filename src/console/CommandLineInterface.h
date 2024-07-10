@@ -34,7 +34,7 @@ private:
 
     void showHelp();
 
-    map<string, vector<vector<string>>>* classifyByType();
+    map<string, vector<array<string, 3>>>* classifyByType();
 };
 
 

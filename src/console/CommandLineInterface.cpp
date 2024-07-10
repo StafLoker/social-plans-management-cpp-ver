@@ -24,7 +24,7 @@ bool CommandLineInterface::runCommand() {
     } else if (VALUE_EXIT == input->at(0)) {
         exit = true;
     } else {
-        if (this->commands.contains(input->at(0))) {
+        if (this->commands[input->at(0)]) {
             this->commands[input->at(0)]->execute(new vector<string>(input->begin() + 1, input->end()));
         } else {
             throw UnsupportedCommandException("Command '" + input->at(0) + "' does not exist.");
@@ -38,8 +38,8 @@ void CommandLineInterface::showHelp() {
     this->view->showHelp(this->classifyByType());
 }
 
-map<string, vector<vector<string>>> *CommandLineInterface::classifyByType() {
-    map<string, vector<vector<string>>> categorizedCommands;
+map<string, vector<array<string, 3>>> *CommandLineInterface::classifyByType() {
+    map<string, vector<array<string, 3>>> categorizedCommands;
     categorizedCommands["user"] = {};
     categorizedCommands["plan"] = {};
     categorizedCommands["activity"] = {};
