@@ -12,7 +12,7 @@ void ViewConsole::showCommand(const string &message) {
 
 }
 
-void ViewConsole::showHelp(Map <String, List<String[]>> *commandCategories) {
+void showHelp(map<string, vector<array<string, 3>>> *commandCategories) {
 
 }
 

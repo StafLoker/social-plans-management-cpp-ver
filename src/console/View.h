@@ -6,6 +6,8 @@ using namespace std;
 #include "chrono"
 #include <map>
 #include <list>
+#include <array>
+#include <vector>
 
 class View {
 public:
@@ -18,7 +20,7 @@ public:
 
     virtual void showCommand(const string &message);
 
-    virtual void showHelp(map<string, vector<vector<string>>> *commandCategories);
+    virtual void showHelp(map<string, vector<array<string, 3>>> *commandCategories);
 
     virtual void showErrorWithComment(const string &errorMessage, const string &comment);
 
