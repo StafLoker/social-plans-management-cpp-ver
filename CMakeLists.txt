@@ -98,8 +98,6 @@ set(SOURCES src/main.cpp
 # Add main executable
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-set_property(TARGER ${PROJECT_NAME} PROPERTY CMAKE_CXX_STANDARD 23)
-
 #########
 # Tests #
 #########
