@@ -1,5 +1,5 @@
 # Minimum CMake configuration required
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.30)
 
 # Set C++ language version
 set(CMAKE_CXX_STANDARD 23)
@@ -10,8 +10,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23 -Wall")
 # Project #
 ###########
 
+set(PROJECT_NAME social_plans_management)
+
 # Name and Version
-project(social_plans_management VERSION 0.0.1)
+project(${PROJECT_NAME} VERSION 0.0.1 LANGUAGES CXX)
 
 # Variables
 set(SOURCES src/main.cpp
@@ -94,7 +96,16 @@ set(SOURCES src/main.cpp
 )
 
 # Add main executable
-add_executable(social_plans_management ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+set_property(TARGER ${PROJECT_NAME} PROPERTY CMAKE_CXX_STANDARD 23)
+
+#########
+# Tests #
+#########
+
+include(CTest)
+enable_testing()
 
 ################
 # Dependencies #
