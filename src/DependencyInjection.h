@@ -70,8 +70,8 @@ private:
     }
 
 public:
-    static DependencyInjection getDependencyInjection() {
-        return dependencyInjection;
+    static const DependencyInjection* getDependencyInjection() {
+        return &dependencyInjection;
     }
 
     void run() {
