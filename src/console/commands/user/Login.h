@@ -21,7 +21,7 @@ private:
 public:
     Login(View *view, UserService *userService, Session *session) : view(view), userService(userService), session(session) {}
 
-    void execute(const string *values) override;
+    void execute(const vector<string> *values) override;
 
     string &value() override;
 
