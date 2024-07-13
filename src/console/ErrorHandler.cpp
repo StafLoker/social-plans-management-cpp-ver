@@ -19,5 +19,3 @@ void ErrorHandler::runErrorManager() {
     }
     this->view->show("Goodbye!");
 }
-
-}

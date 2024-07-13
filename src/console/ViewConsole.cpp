@@ -1,6 +1,6 @@
 #include "ViewConsole.h"
 
-string *ViewConsole::enterCommand() {
+vector<string> *ViewConsole::enterCommand() {
 
 }
 

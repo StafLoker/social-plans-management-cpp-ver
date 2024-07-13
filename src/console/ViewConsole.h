@@ -5,13 +5,13 @@
 #include "View.h"
 
 class ViewConsole : public View {
-    string *enterCommand() override;
+    vector<string> *enterCommand() override;
 
     void showWelcome() override;
 
     void showCommand(const string &message) override;
 
-    void showHelp(Map <String, List<String[]>> *commandCategories) override;
+    void showHelp(map<string, vector<array<string, 3>>> *commandCategories) override;
 
     void showErrorWithComment(const string &errorMessage, const string &comment) override;
 
